@@ -9,13 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Artist.h"
 
-#error  Please enter your API Keys and remove this line.
 
 // http://www.last.fm/api/account/create
 // http://8tracks.com/developers/new
 
-#define LAST_FM_API_KEY @"XXXXXXXXXXXXXXXXXX"
-#define EIGHT_TRACKS_API_KEY @"XXXXXXXXXXXXXXXXXX"
+#define LAST_FM_API_KEY @"f375cea43786f74ab2694e6c15efc754"
+#define EIGHT_TRACKS_API_KEY @"3f3f7a2ebf9ea998d07afa9111a9cf3a8ea4d9d0"
 
 // DEVELOPER NOTE: Ideally, we would create an API client model abstraction, but for the
 //                 sake of brevity we are hardcoding API endpoints.
