@@ -99,6 +99,7 @@ static dispatch_queue_t json_request_operation_processing_queue() {
     return [[[request URL] pathExtension] isEqualToString:@"json"] || [super canProcessRequest:request];
 }
 
+// Sets the block to execute when the operation has finished executing.
 - (void)setCompletionBlockWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
