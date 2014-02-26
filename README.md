@@ -52,3 +52,9 @@ Save bandwidth / load times by loading remote @2x / @1x assets appropriately
 Abstract view drawing methods
 
 Handle no results
+
+## TEMPORARY (possible) TODO:
+- Split up ArtistInformationResultsHandler class into smaller functions.
+- Create API model class and fix overall object-oriented design.
+- Fill out model classes with more custom methods and properties.
+- More to come...

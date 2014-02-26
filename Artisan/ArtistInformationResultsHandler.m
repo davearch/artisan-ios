@@ -23,6 +23,8 @@
  Needs to be broken up into smaller functions.
  */
 + (void) performArtistQuery:(Artist*)artist {
+    
+    // Move to Artist class
     NSString *artistParameter =
     (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes
          // CFAllocatorRef allocator:
