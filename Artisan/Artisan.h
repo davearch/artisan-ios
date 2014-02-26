@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Artisan : NSObject
-+ (CGFloat) calculateLabelHeightWithText:(NSString*)text andFont:(UIFont *)font thatFitsWidth:(CGFloat)width;
++ (CGFloat) calculateLabelHeightWithText:(NSString*)text
+                                 andFont:(UIFont *)font
+                           thatFitsWidth:(CGFloat)width;
 + (UIFont*) defaultBodyFont;
 + (UIColor *) defaultColor;
 + (UIFont*) fontOfSize:(NSInteger)size;

@@ -14,8 +14,12 @@
     self = [super init];
     if (self) {
         _name = [mixData objectForKey:@"name"];
-        _coverImageURL = [NSURL URLWithString:[[mixData objectForKey:@"cover_urls"] objectForKey:@"sq500"]];
-        _mixURL = [NSURL URLWithString:[@"http://m.8tracks.com/" stringByAppendingString:[mixData objectForKey:@"path"]]];
+        _coverImageURL = [NSURL URLWithString:
+                          [[mixData objectForKey:@"cover_urls"]
+                           objectForKey:@"sq500"]];
+        _mixURL = [NSURL URLWithString:
+                   [@"http://m.8tracks.com/"
+                    stringByAppendingString:[mixData objectForKey:@"path"]]];
     }
     return self;
 }

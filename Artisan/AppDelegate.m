@@ -18,13 +18,15 @@
     @synchronized(self)
     {
         if (!sharedSingleton)
-            sharedSingleton = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+            sharedSingleton = (AppDelegate*)
+            [[UIApplication sharedApplication] delegate];
         
         return sharedSingleton;
     }
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarHidden:NO
                                             withAnimation:UIStatusBarAnimationSlide];
