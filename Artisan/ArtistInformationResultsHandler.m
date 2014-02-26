@@ -73,26 +73,31 @@
                 [NSURL URLWithString:[image objectForKey:@"#text"]];
             }
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:
-         RECEIVED_ARTIST_INFORMATION
-         object:self
-         userInfo:[NSDictionary dictionaryWithObject:artist
-                                              forKey:RECEIVED_ARTIST_INFORMATION]];
+        [[NSNotificationCenter defaultCenter]
+            postNotificationName:RECEIVED_ARTIST_INFORMATION
+                          object:self
+                        userInfo:
+                        [NSDictionary dictionaryWithObject:artist
+                                      forKey:RECEIVED_ARTIST_INFORMATION]];
     }
-        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+        failure:^(NSURLRequest *request,
+                  NSHTTPURLResponse *response,
+                  NSError *error,
+                  id JSON)
     {
         NSLog(@"Request Failure Because %@", [error userInfo]);
-    }]; // End of AFJSONRequestOperation *bioOperation assignment
+    }];
+    // End of AFJSONRequestOperation *bioOperation assignment
     [bioOperation start];
     
     // Creates a URL request with the 8tracks.com API
     // mixRequest.URL = MIX_API_ENDPOINT + artistParameter + API_KEY_PARAMETER +
     // EIGHT_TRACKS_API_KEY
-    NSURLRequest *mixRequest = [NSURLRequest requestWithURL:
-                                [NSURL URLWithString:
-                                 [[MIX_API_ENDPOINT stringByAppendingString:artistParameter]
-                                  stringByAppendingFormat:@"&%@%@",
-                                  API_KEY_PARAMETER, EIGHT_TRACKS_API_KEY]]];
+    NSURLRequest *mixRequest =
+    [NSURLRequest requestWithURL:
+    [NSURL URLWithString:[[MIX_API_ENDPOINT stringByAppendingString:artistParameter]
+                          stringByAppendingFormat:@"&%@%@",
+                          API_KEY_PARAMETER, EIGHT_TRACKS_API_KEY]]];
     /**
      Once [mixOperation start], requests JSON info from 8tracks.com
      If successful, initializes NSMuttableArray with the number of
@@ -121,7 +126,10 @@
                    dictionaryWithObject:artist
                    forKey:RECEIVED_ARTIST_MIXES]];
     }
-    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    failure:^(NSURLRequest *request,
+              NSHTTPURLResponse *response,
+              NSError *error,
+              id JSON)
     {
         NSLog(@"Request Failure Because %@", [error userInfo]);
     }]; // End of AFJSONRequestOperation *mixOperation assignment
