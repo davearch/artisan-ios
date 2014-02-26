@@ -16,6 +16,12 @@
 //
 @implementation ArtistInformationResultsHandler
 
+/**
+ Makes requests to the Last.fm & 8tracks.com APIs for
+ artist info. Sets all properties of the Artist class:
+ name, biography, imageURL, mixes.
+ Needs to be broken up into smaller functions.
+ */
 + (void) performArtistQuery:(Artist*)artist {
     NSString *artistParameter =
     (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes
@@ -71,7 +77,7 @@
          userInfo:[NSDictionary dictionaryWithObject:artist
                                               forKey:RECEIVED_ARTIST_INFORMATION]];
     }
-    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
         NSLog(@"Request Failure Because %@", [error userInfo]);
     }]; // End of AFJSONRequestOperation *bioOperation assignment
