@@ -12,18 +12,19 @@
 @implementation ArtistInformationView
 
 static const CGFloat artistImageHeight = 140.0;
-
+// Shouldn't use Artist as parameter?
+// This code is not reusable
 - (id)initWithArtist:(Artist*)artist
 {
     self = [super init];
     if (self) {
+        // Move to controller
         NSURLRequest *request = [NSURLRequest requestWithURL:artist.imageURL];
         
         UIView *artistImagePlaceholderContainer =
         [[UIView alloc]initWithFrame:CGRectMake(kPadding,
                                                 kPadding, 320.0 - (kPadding * 2),
                                                 artistImageHeight)];
-        
         artistImagePlaceholderContainer.backgroundColor = [UIColor lightGrayColor];
         artistImagePlaceholderContainer.alpha = 0.60;
         artistImagePlaceholderContainer.clipsToBounds = YES;
@@ -32,7 +33,6 @@ static const CGFloat artistImageHeight = 140.0;
                                 green:100.0/255.0
                                  blue:100.0/255.0
                                 alpha:0.1].CGColor;
-        
         artistImagePlaceholderContainer.layer.borderWidth = 1.0;
         artistImagePlaceholderContainer.layer.shadowColor = [UIColor blackColor].CGColor;
         artistImagePlaceholderContainer.layer.shadowOpacity = 0.1;
@@ -42,18 +42,17 @@ static const CGFloat artistImageHeight = 140.0;
         UIImageView *artistImagePlaceholder =
                 [[UIImageView alloc]initWithImage:
                         [UIImage imageNamed:@"ArtistImagePlaceholder"]];
-        
         artistImagePlaceholder.center =
                 CGPointMake(artistImagePlaceholderContainer.width / 2,
                             artistImagePlaceholderContainer.height / 2);
-        
         [artistImagePlaceholderContainer addSubview:artistImagePlaceholder];
+        
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.alpha = 0.0;
         [artistImagePlaceholderContainer addSubview:imageView];
         __weak UIImageView *receivedImageView = imageView;
-        
+        // NO
         [imageView setImageWithURLRequest:request
                          placeholderImage:nil
                                   success:^(NSURLRequest *request,
@@ -76,7 +75,6 @@ static const CGFloat artistImageHeight = 140.0;
                                           artistImagePlaceholderContainer.bottom + kPadding,
                                           320.0 - (kPadding * 2),
                                           300.0)];
-        
         artistBiographyContainer.backgroundColor = [UIColor lightGrayColor];
         artistBiographyContainer.alpha = 0.60;
         artistBiographyContainer.layer.borderColor =
@@ -84,7 +82,6 @@ static const CGFloat artistImageHeight = 140.0;
                                 green:100.0/255.0
                                  blue:100.0/255.0
                                 alpha:0.1].CGColor;
-        
         artistBiographyContainer.layer.borderWidth = 1.0;
         artistBiographyContainer.layer.shadowColor = [UIColor blackColor].CGColor;
         artistBiographyContainer.layer.shadowOpacity = 0.1;
@@ -93,28 +90,30 @@ static const CGFloat artistImageHeight = 140.0;
         
         UILabel *artistBiography = [[UILabel alloc]
                                     initWithFrame:artistBiographyContainer.frame];
+        // might change:
         artistBiography.font = [Artisan defaultBodyFont];
         artistBiography.numberOfLines = 0;
         artistBiography.top = kPadding;
         artistBiography.width = artistBiographyContainer.width - (kPadding * 2);
-        
+        // not reusable
         artistBiography.height = [Artisan
                                   calculateLabelHeightWithText:artist.biography
                                   andFont:artistBiography.font
                                   thatFitsWidth:artistBiography.width];
-        
+        // neither is this
         artistBiography.text = artist.biography;
         artistBiography.backgroundColor = [UIColor clearColor];
         [artistBiographyContainer addSubview:artistBiography];
         artistBiographyContainer.height = artistBiography.height + (kPadding * 2);
+        
         UILabel *artistName = [[UILabel alloc] init];
+        // again
         artistName.text = [artist.name uppercaseString];
         artistName.backgroundColor = [UIColor clearColor];
         artistName.font = [Artisan boldFontOfSize:11.0];
         artistName.alpha = 0.9;
         [artistName sizeToFit];
         artistName.origin = CGPointMake(kPaddingSmall, kPaddingSmall);
-        
         
         UIView *artistNameContainer =
         [[UIView alloc]
@@ -130,13 +129,13 @@ static const CGFloat artistImageHeight = 140.0;
                                     (kPaddingSmall * 2),
                                   artistName.height +
                                     (kPaddingSmall * 2))];
-        
         artistNameContainer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.8];
         [artistNameContainer addSubview:artistName];
         [self addSubview:artistNameContainer];
         
         self.frame = CGRectMake(0, 0,
                                 320.0,
+                                // this again
                                 ([artist.biography length] > 0) ? artistImageHeight +
                                 [Artisan calculateLabelHeightWithText:artist.biography
                                                               andFont:[Artisan defaultBodyFont]
@@ -145,7 +144,7 @@ static const CGFloat artistImageHeight = 140.0;
     }
     return self;
 }
-
+// and here
 + (CGFloat) cellHeightForArtist:(Artist*)artist
 {
     

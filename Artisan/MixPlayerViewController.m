@@ -11,7 +11,6 @@
 
 
 @implementation MixPlayerViewController
-
 - (id)initWithMixURL:(NSURL *)mixURL
 {
     self = [super init];
@@ -26,10 +25,12 @@
                   __PRETTY_FUNCTION__,
                   setCategoryError);
         }
+        // Perhaps split this into another view class
         UIWebView *webView = [[UIWebView alloc] init];
         webView.frame = self.view.bounds;
         webView.height -= 60;
         webView.scalesPageToFit = YES;
+        //
         [webView loadRequest:[NSURLRequest requestWithURL:mixURL]];
         [self.view addSubview:webView];
         UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -51,7 +52,6 @@
         mixTitle.font = [Artisan boldFontOfSize:13.0];
         mixTitle.alpha = 0.9;
         [mixTitle sizeToFit];
-        
         self.navigationItem.titleView = mixTitle;
     }
     return self;

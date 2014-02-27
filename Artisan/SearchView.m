@@ -23,10 +23,12 @@
         self.alpha = 0.6;
         self.backgroundColor = [UIColor whiteColor];
         
+        // Perform query button
         self.searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.searchButton addTarget:self
                               action:@selector(performSearchQuery)
                     forControlEvents:UIControlEventTouchUpInside];
+        //
         [self.searchButton setBackgroundImage:[UIImage imageNamed:@"SearchIcon"]
                                      forState:UIControlStateNormal];
         [self.searchButton sizeToFit];
@@ -57,7 +59,7 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField
-shouldChangeCharactersInRange:(NSRange)range
+            shouldChangeCharactersInRange:(NSRange)range
             replacementString:(NSString *)string
 {
     NSRange lowercaseCharRange;
@@ -82,11 +84,14 @@ shouldChangeCharactersInRange:(NSRange)range
     return NO; // we do not want UITextField to insert line-breaks
 }
 
-
+// Not reusable code
+// Should change text field only, not perform query.
+// Instead: point to API Controller
 - (void)performSearchQuery
 {
     if ([self.searchField isFirstResponder]) {
         [self.searchField resignFirstResponder];
+        // A controller should do this.
         [ArtistInformationResultsHandler
                 performArtistQuery:[[Artist alloc]
                              initWithArtistName:self.searchField.text]];
@@ -98,7 +103,9 @@ shouldChangeCharactersInRange:(NSRange)range
     }
 }
 
-+ (void)pulse:(UIView*)view toSize: (float) value withDuration:(float) duration
++ (void)pulse:(UIView*)view
+       toSize:(float)value
+ withDuration:(float)duration
 {
     CABasicAnimation *pulseAnimation = [CABasicAnimation
                                         animationWithKeyPath:@"transform.scale"];
@@ -108,7 +115,6 @@ shouldChangeCharactersInRange:(NSRange)range
                                      functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     pulseAnimation.autoreverses = YES;
     pulseAnimation.repeatCount = FLT_MAX;
-    
     [view.layer addAnimation:pulseAnimation forKey:nil];
 }
 

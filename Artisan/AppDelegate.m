@@ -14,13 +14,11 @@
 + (AppDelegate*)sharedAppDelegate
 {
     static AppDelegate *sharedSingleton;
-    
     @synchronized(self)
     {
         if (!sharedSingleton)
-            sharedSingleton = (AppDelegate*)
-            [[UIApplication sharedApplication] delegate];
-        
+            sharedSingleton =
+            (AppDelegate*)[[UIApplication sharedApplication] delegate];
         return sharedSingleton;
     }
 }
@@ -29,17 +27,14 @@
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                            withAnimation:UIStatusBarAnimationSlide];
+                                       withAnimation:UIStatusBarAnimationSlide];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     self.viewController = [[HomeViewController alloc] init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    
     [[UINavigationBar appearance] setTintColor:[Artisan defaultColor]];
     [[UIBarButtonItem appearance] setTintColor:[Artisan defaultColor]];
-    
     return YES;
 }
 

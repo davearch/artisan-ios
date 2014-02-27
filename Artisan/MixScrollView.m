@@ -13,7 +13,7 @@
 @end
 
 @implementation MixScrollView
-
+//
 - (id)initWithMixes:(NSArray *)mixes
 {
     self = [super init];
@@ -22,15 +22,17 @@
         self.contentSize = CGSizeMake(((mixDimensions + kPadding) *
                                        [mixes count]) +
                                       kPadding, self.height);
-        
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
+        
 //        self.userInteractionEnabled = YES;
 //        self.exclusiveTouch = NO;
 //        self.canCancelContentTouches = YES;
 //        self.delaysContentTouches = YES;
+        
         self.mixViews = [[NSMutableArray alloc] initWithCapacity:[mixes count]];
-
+        
+        // Use a different data structure?
         for (int i = 0; i < [mixes count]; i++) {
             MixView *mixView = [[MixView alloc]
                                 initWithMix:[mixes objectAtIndex:i]];
@@ -52,9 +54,10 @@
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
     CGPoint mPoint = [tap locationInView:tap.view];
-    [((MixView *)[self.mixViews objectAtIndex:
-                  (int)
-                  (mPoint.x / (mixDimensions + kPadding))])
+    [((MixView *)
+      [self.mixViews objectAtIndex:(int)(mPoint.x /
+                                         (mixDimensions +
+                                          kPadding))])
      playMix];
 }
 

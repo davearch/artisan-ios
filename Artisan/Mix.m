@@ -9,6 +9,7 @@
 #import "Mix.h"
 
 @implementation Mix
+// Shouldn't use such specific strings
 - (id)initMixWithData:(NSDictionary*)mixData
 {
     self = [super init];

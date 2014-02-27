@@ -42,11 +42,11 @@
      bioRequest = ARTIST_API_ENDPOINT + artistParameter + API_KEY_PARAMETER + 
      LAST_FM_API_KEY
      */
-    NSURLRequest *bioRequest =[NSURLRequest requestWithURL:[NSURL URLWithString:[
-                    [ARTIST_API_ENDPOINT stringByAppendingString:artistParameter]
-                                        stringByAppendingFormat: @"&%@%@",
-                                                             API_KEY_PARAMETER,
-                                                             LAST_FM_API_KEY]]];
+    NSURLRequest *bioRequest =[NSURLRequest requestWithURL:
+                               [NSURL URLWithString:
+                                [[ARTIST_API_ENDPOINT stringByAppendingString:
+                                  artistParameter]stringByAppendingFormat:
+                                 @"&%@%@", API_KEY_PARAMETER,LAST_FM_API_KEY]]];
     /**
      Once [bioOperation start], requests JSON info from Last.fm.
      If successful, sets artist.biography, artist.imageURL and

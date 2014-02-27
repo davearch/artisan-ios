@@ -25,6 +25,7 @@ BOOL receivedArtistMixResults = FALSE;
 static const CGFloat artistImageHeight = 140.0;
 
 @implementation HomeViewController
+// Not too sure about these images...
 - (id)init
 {
     self = [super init];
@@ -38,6 +39,7 @@ static const CGFloat artistImageHeight = 140.0;
                                                     self.view.width,
                                                     [UIImage imageNamed:@"SearchIcon"].size.height +
                                                     (kPadding * 2))];
+        // Create SEARCHVIEW
         [self.view addSubview:self.searchView];
         self.tableView = [[UITableView alloc]
                           initWithFrame:CGRectMake(0,
@@ -50,6 +52,7 @@ static const CGFloat artistImageHeight = 140.0;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.tableView.backgroundColor = [UIColor clearColor];
         self.tableView.showsVerticalScrollIndicator = NO;
+        // Create TABLEVIEW
         [self.view addSubview:self.tableView];
         self.backgroundLogo = [[UIImageView alloc]
                                initWithImage:[UIImage imageNamed:@"BackgroundIcon"]];
@@ -60,6 +63,7 @@ static const CGFloat artistImageHeight = 140.0;
     return self;
 }
 
+// Called when tableView appears.
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -85,12 +89,15 @@ static const CGFloat artistImageHeight = 140.0;
 - (void)endEditing
 {
     [self.searchView endEditing:YES];
+    // Maybe...
     if (self.artist) {
         self.searchView.searchField.text = self.artist.name;
     }
 }
 
 #pragma mark - Notification Handlers
+// Recieves notifications from ArtistInformationRequestsHandler.m
+// Calls reallyReloadArtistInformation method upon notification.
 - (void)receivedArtistInformation:(NSNotification *) notification
 {
     [UIApplication cancelPreviousPerformRequestsWithTarget:self
@@ -100,7 +107,7 @@ static const CGFloat artistImageHeight = 140.0;
                withObject:notification
                afterDelay:0.3]; // Try to avoid double notifications
 }
-
+// same^^
 - (void)receivedMixInformation:(NSNotification *) notification
 {
     [UIApplication cancelPreviousPerformRequestsWithTarget:self
@@ -110,7 +117,8 @@ static const CGFloat artistImageHeight = 140.0;
                withObject:notification
                afterDelay:0.3]; // Try to avoid double notifications
 }
-
+// Sets artist name with NSString notification.name
+// Updates tableView for new Artist info
 - (void) reallyReloadArtistInformation:(NSNotification *)notification
 {
     self.backgroundLogo.alpha = 0.0;
@@ -120,14 +128,14 @@ static const CGFloat artistImageHeight = 140.0;
     [self.tableView beginUpdates];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:kResultsSectionArtistInformation]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
-    
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:kResultsSectionArtistMixes]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
-    
     [self.tableView endUpdates];
     [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
+// Sets artist name with NSString notification.name.
+// Updates tableView
 - (void) reallyReloadMixInformation:(NSNotification *)notification
 {
     self.backgroundLogo.alpha = 0.0;
@@ -137,10 +145,8 @@ static const CGFloat artistImageHeight = 140.0;
     [self.tableView beginUpdates];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:kResultsSectionArtistInformation]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
-    
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:kResultsSectionArtistMixes]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
-    
     [self.tableView endUpdates];
     [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }

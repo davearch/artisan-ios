@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADC3B74318BEE366003BBE35 /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC3B74218BEE366003BBE35 /* APIHandler.m */; };
 		E83E8C3916AE2E6F0055525D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E83E8C3716AE2E6F0055525D /* OpenSans-ExtraBold.ttf */; };
 		E83E8C3A16AE2E6F0055525D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E83E8C3816AE2E6F0055525D /* OpenSans-Light.ttf */; };
 		E844AB3316AB71AE00B34708 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E844AB3216AB71AE00B34708 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ADC3B74118BEE366003BBE35 /* APIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIHandler.h; sourceTree = "<group>"; };
+		ADC3B74218BEE366003BBE35 /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
 		E83E8C3716AE2E6F0055525D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E83E8C3816AE2E6F0055525D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		E844AB2E16AB71AE00B34708 /* Artisan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artisan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +250,8 @@
 		E844AB8E16AB80B100B34708 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ADC3B74118BEE366003BBE35 /* APIHandler.h */,
+				ADC3B74218BEE366003BBE35 /* APIHandler.m */,
 				E844AB4A16AB71AF00B34708 /* HomeViewController.h */,
 				E844AB4B16AB71AF00B34708 /* HomeViewController.m */,
 				E8B5D58816ABFB7A0063B8AE /* MixPlayerViewController.h */,
@@ -400,6 +405,7 @@
 				E844AB4316AB71AF00B34708 /* AppDelegate.m in Sources */,
 				E844AB4C16AB71AF00B34708 /* HomeViewController.m in Sources */,
 				E844AB6116AB73E700B34708 /* SearchView.m in Sources */,
+				ADC3B74318BEE366003BBE35 /* APIHandler.m in Sources */,
 				E844AB6E16AB7F6F00B34708 /* ArtistInformationResultsHandler.m in Sources */,
 				E844AB9A16AB9E6E00B34708 /* Artist.m in Sources */,
 				E844ABA716ABB4AD00B34708 /* Artisan.m in Sources */,

@@ -23,9 +23,8 @@
     self = [super init];
     if (self) {
         self.mixURL = mix.mixURL;
-        
+        // i don't know...
         NSURLRequest *request = [NSURLRequest requestWithURL:mix.coverImageURL];
-        
         UIView *mixImagePlaceholderContainer = [[UIView alloc]
                                                 initWithFrame:CGRectMake(0,
                                                                          0,
@@ -39,17 +38,15 @@
         UIImageView *mixImagePlaceholder = [[UIImageView alloc]
                                             initWithImage:
                                             [UIImage imageNamed:@"MixPlaceholderIcon"]];
-        
         mixImagePlaceholder.center = CGPointMake(mixImagePlaceholderContainer.width / 2,
                                                  mixImagePlaceholderContainer.height / 2);
-        
         [mixImagePlaceholderContainer addSubview:mixImagePlaceholder];
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.alpha = 0.0;
         [mixImagePlaceholderContainer addSubview:imageView];
+        // these next couple of lines
         __weak UIImageView *receivedImageView = imageView;
-        
         [imageView setImageWithURLRequest:request
                          placeholderImage:nil
                                   success:^(NSURLRequest *request,
@@ -64,7 +61,7 @@
                 [mixImagePlaceholder removeFromSuperview]; // cleanup
             }];
         }   failure:nil]; // End of setImageWithURLRequest block
-        
+        //
         UILabel *mixName = [[UILabel alloc] init];
         mixName.text = [mix.name uppercaseString];
         mixName.backgroundColor = [UIColor clearColor];
@@ -73,7 +70,6 @@
         [mixName sizeToFit];
         mixName.width = mixDimensions - (kPaddingSmall * 2);
         mixName.origin = CGPointMake(kPaddingSmall, kPaddingSmall);
-    
         UIView *mixNameBackground =
             [[UIView alloc] initWithFrame:CGRectMake(0,
                                                      mixImagePlaceholderContainer.bottom -
@@ -90,7 +86,7 @@
     return self;
 }
 
-- (void)playMix
+- (void)playMix // should be a getter, e.g., 'getWebPlayer'
 {
     MixPlayerViewController *mixPlayerViewController =
         [[MixPlayerViewController alloc] initWithMixURL:self.mixURL];
