@@ -33,12 +33,12 @@
     if (self.method)
         [self lastFMQuery:nounTitle andMethod:self.method];
     else
-        [self lastFMQuery:nounTitle andMethod:@"artist.getinfo"];   // change this
+        [self lastFMQuery:nounTitle andMethod:@"artist.getinfo"];   // [self setAndReturnMethod];
 }                                                                   // create method
 
 - (void)lastFMQuery:(NSString *)nounTitle andMethod:(NSString *)methodName
 {
-    self.preTitle = @"&artist=";                                    // here, again
+    self.preTitle = @"&artist=";                                    // [preTitleDictionary objectforkey: Title];
     nounTitle = [APIHandler createRequestString:nounTitle];
     NSURL *url = [[NSURL alloc] init];
     // fix:
@@ -102,6 +102,7 @@
 - (void) artistGetInfo:(NSString *)artistName
 {
     self.title = artistName;
+    // 
     self.method = @"artist.getInfo";    // [methodsDictionary objectForKey:
     self.preTitle = @"&artist=";        // [preTitleDictionary objectForKey: artist];
 }

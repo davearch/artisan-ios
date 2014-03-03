@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD5B64C418C438B200E69242 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5B64B718C438B200E69242 /* DDXMLElementAdditions.m */; };
+		AD5B64C518C438B200E69242 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5B64BA18C438B200E69242 /* NSString+DDXML.m */; };
+		AD5B64C618C438B200E69242 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5B64BD18C438B200E69242 /* DDXMLDocument.m */; };
+		AD5B64C718C438B200E69242 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5B64BF18C438B200E69242 /* DDXMLElement.m */; };
+		AD5B64C818C438B200E69242 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5B64C118C438B200E69242 /* DDXMLNode.m */; };
+		AD5B64CC18C43B2400E69242 /* LastFm.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5B64CB18C43B2400E69242 /* LastFm.m */; };
 		ADC3B74318BEE366003BBE35 /* APIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC3B74218BEE366003BBE35 /* APIHandler.m */; };
 		E83E8C3916AE2E6F0055525D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E83E8C3716AE2E6F0055525D /* OpenSans-ExtraBold.ttf */; };
 		E83E8C3A16AE2E6F0055525D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E83E8C3816AE2E6F0055525D /* OpenSans-Light.ttf */; };
@@ -57,6 +63,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD5B64B618C438B200E69242 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		AD5B64B718C438B200E69242 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		AD5B64B918C438B200E69242 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
+		AD5B64BA18C438B200E69242 /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
+		AD5B64BB18C438B200E69242 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		AD5B64BC18C438B200E69242 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		AD5B64BD18C438B200E69242 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		AD5B64BE18C438B200E69242 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		AD5B64BF18C438B200E69242 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		AD5B64C018C438B200E69242 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		AD5B64C118C438B200E69242 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		AD5B64C318C438B200E69242 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		AD5B64CA18C43B2400E69242 /* LastFm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastFm.h; sourceTree = "<group>"; };
+		AD5B64CB18C43B2400E69242 /* LastFm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastFm.m; sourceTree = "<group>"; };
 		ADC3B74118BEE366003BBE35 /* APIHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIHandler.h; sourceTree = "<group>"; };
 		ADC3B74218BEE366003BBE35 /* APIHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIHandler.m; sourceTree = "<group>"; };
 		E83E8C3716AE2E6F0055525D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -152,6 +172,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD5B64B418C438B200E69242 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B64B518C438B200E69242 /* Additions */,
+				AD5B64B818C438B200E69242 /* Categories */,
+				AD5B64BB18C438B200E69242 /* DDXML.h */,
+				AD5B64BC18C438B200E69242 /* DDXMLDocument.h */,
+				AD5B64BD18C438B200E69242 /* DDXMLDocument.m */,
+				AD5B64BE18C438B200E69242 /* DDXMLElement.h */,
+				AD5B64BF18C438B200E69242 /* DDXMLElement.m */,
+				AD5B64C018C438B200E69242 /* DDXMLNode.h */,
+				AD5B64C118C438B200E69242 /* DDXMLNode.m */,
+				AD5B64C218C438B200E69242 /* Private */,
+			);
+			name = KissXML;
+			path = ../../KissXML/KissXML;
+			sourceTree = "<group>";
+		};
+		AD5B64B518C438B200E69242 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B64B618C438B200E69242 /* DDXMLElementAdditions.h */,
+				AD5B64B718C438B200E69242 /* DDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		AD5B64B818C438B200E69242 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B64B918C438B200E69242 /* NSString+DDXML.h */,
+				AD5B64BA18C438B200E69242 /* NSString+DDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		AD5B64C218C438B200E69242 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B64C318C438B200E69242 /* DDXMLPrivate.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		AD5B64C918C43B2400E69242 /* LastFm */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B64CA18C43B2400E69242 /* LastFm.h */,
+				AD5B64CB18C43B2400E69242 /* LastFm.m */,
+			);
+			name = LastFm;
+			path = ../../LastFm/LastFm;
+			sourceTree = "<group>";
+		};
 		E844AB2316AB71AE00B34708 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +276,8 @@
 		E844AB3916AB71AE00B34708 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD5B64C918C43B2400E69242 /* LastFm */,
+				AD5B64B418C438B200E69242 /* KissXML */,
 				E8B5D5AC16AC9AE60063B8AE /* AFNetworking */,
 				E8B5D5C016AC9AE60063B8AE /* Categories */,
 				E8B5D5C716AC9AE60063B8AE /* Fonts */,
@@ -360,6 +436,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = E844AB2316AB71AE00B34708;
 			productRefGroup = E844AB2F16AB71AE00B34708 /* Products */;
@@ -404,6 +481,7 @@
 				E844AB3F16AB71AE00B34708 /* main.m in Sources */,
 				E844AB4316AB71AF00B34708 /* AppDelegate.m in Sources */,
 				E844AB4C16AB71AF00B34708 /* HomeViewController.m in Sources */,
+				AD5B64C518C438B200E69242 /* NSString+DDXML.m in Sources */,
 				E844AB6116AB73E700B34708 /* SearchView.m in Sources */,
 				ADC3B74318BEE366003BBE35 /* APIHandler.m in Sources */,
 				E844AB6E16AB7F6F00B34708 /* ArtistInformationResultsHandler.m in Sources */,
@@ -414,11 +492,15 @@
 				E844ABB016ABE27400B34708 /* MixScrollView.m in Sources */,
 				E844ABB316ABE3D300B34708 /* MixView.m in Sources */,
 				E8B5D58A16ABFB7A0063B8AE /* MixPlayerViewController.m in Sources */,
+				AD5B64CC18C43B2400E69242 /* LastFm.m in Sources */,
 				E8B5D5D016AC9AE60063B8AE /* AFHTTPClient.m in Sources */,
+				AD5B64C418C438B200E69242 /* DDXMLElementAdditions.m in Sources */,
 				E8B5D5D116AC9AE60063B8AE /* AFHTTPRequestOperation.m in Sources */,
 				E8B5D5D216AC9AE60063B8AE /* AFImageRequestOperation.m in Sources */,
+				AD5B64C618C438B200E69242 /* DDXMLDocument.m in Sources */,
 				E8B5D5D316AC9AE60063B8AE /* AFJSONRequestOperation.m in Sources */,
 				E8B5D5D416AC9AE60063B8AE /* AFNetworkActivityIndicatorManager.m in Sources */,
+				AD5B64C818C438B200E69242 /* DDXMLNode.m in Sources */,
 				E8B5D5D516AC9AE60063B8AE /* AFPropertyListRequestOperation.m in Sources */,
 				E8B5D5D616AC9AE60063B8AE /* AFURLConnectionOperation.m in Sources */,
 				E8B5D5D716AC9AE60063B8AE /* AFXMLRequestOperation.m in Sources */,
@@ -426,6 +508,7 @@
 				E8B5D5D916AC9AE60063B8AE /* GTMNSString+HTML.m in Sources */,
 				E8B5D5DA16AC9AE60063B8AE /* NSString+HTML.m in Sources */,
 				E8B5D5DB16AC9AE60063B8AE /* UIView+ViewHelpers.m in Sources */,
+				AD5B64C718C438B200E69242 /* DDXMLElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,8 +548,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,8 +576,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -501,6 +596,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Artisan/Artisan-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "Artisan/Artisan-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -515,6 +614,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Artisan/Artisan-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "Artisan/Artisan-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
