@@ -10,6 +10,7 @@
 
 #define LFM_ENDPOINT @"http://ws.audioscrobbler.com/2.0/?method="
 #define KEY @"&api_key="
+#define JSONFORMAT @"&format=json"
 
 #import <Foundation/Foundation.h>
 
@@ -21,9 +22,6 @@
 // NSArrays for each?
 // NSDictionary w/
 
-
-- (void)lastFMQuery:(NSString*)nounTitle;
-- (void)lastFMQuery:(NSString*)nounTitle andMethod:(NSString*)methodName;
 - (UIImage*)imageQuery:(NSString*)artistName;
 - (void)artistGetInfo:(NSString*)artistName;
 

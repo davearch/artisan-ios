@@ -5,7 +5,6 @@
 //  Created by David Archuleta on 2/26/14.
 //  Copyright (c) 2014 Nathan Mock. All rights reserved.
 //
-
 #import "APIHandler.h"
 #import "AFJSONRequestOperation.h"
 
@@ -19,35 +18,36 @@
 - (void)setPlaylistInfo;
 - (void)notifyController;
 - (void)loadOperation:(NSURLRequest*)urlToRequest;
+- (void)lastFMQuery:(NSString*)nounTitle;
+- (void)lastFMQuery:(NSString *)nounTitle andMethod:(NSString*)methodName;
 // setAndReturnMethod
 // setAndReturnTitle
 // setAndReturnPreTitle
 
 @end
 
-/*********/
+/******************************************************************************/
 @implementation APIHandler
-
 - (void)lastFMQuery:(NSString *)nounTitle
 {
     if (self.method)
         [self lastFMQuery:nounTitle andMethod:self.method];
     else
-        [self lastFMQuery:nounTitle andMethod:@"artist.getinfo"];   // [self setAndReturnMethod];
-}                                                                   // create method
+        [self lastFMQuery:nounTitle andMethod:@"artist.getinfo"];   // Change this!!!
+}
 
-- (void)lastFMQuery:(NSString *)nounTitle andMethod:(NSString *)methodName
+- (void)lastFMQuery:(NSString *)nounTitle andMethod:(NSString *)methodName // Should be general enough to take all queries.
 {
-    self.preTitle = @"&artist=";                                    // [preTitleDictionary objectforkey: Title];
     nounTitle = [APIHandler createRequestString:nounTitle];
     NSURL *url = [[NSURL alloc] init];
-    // fix:
     url = [self returnLastFMURL:(NSString *)nounTitle];
     if (!url){
         NSLog(@"createRequestString ERROR");
     }
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
     // perform query.
+    
+    
 }
 
 + (NSString*)createRequestString:(NSString *)title
@@ -61,12 +61,7 @@
             kCFStringEncodingISOLatin1
     );
 }
-// could expand this, there's at most 3 variables in
-// the Last.fm API.
-// Perhaps like a setPrefixURL method (LFM_EP + method name)
-// A setInteriorURL (TITLE_PRE + TITLE)
-// And a setPostfixURL (KEY + (LFM_KEY)
-// Then combine them and create URL
+
 - (NSURL*)returnLastFMURL:(NSString *)title
 {
     NSString *prefix = [NSString stringWithFormat:
@@ -80,8 +75,10 @@
                         KEY,
                         LFM_KEY];
     NSString *both = [prefix stringByAppendingString:suffix];
+    both = [both stringByAppendingString:JSONFORMAT]; /* place in json format */
     return [NSURL URLWithString: both];
 }
+
 - (APIHandler*) init
 {
     self = [super init];

@@ -59,7 +59,7 @@
         success: ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         // TODO: API Error Checking / Handling
-        // 
+        //
         artist.biography = [[[[JSON
                                objectForKey:@"artist"]
                               objectForKey:@"bio"]
